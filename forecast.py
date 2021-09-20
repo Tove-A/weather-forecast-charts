@@ -16,8 +16,6 @@ while(make_choice):
     city = input("\n-GET FORECAST FOR A CITY-\n\nCity: ")
     choice = input("A. Temperature Chart\nB. Humidity Chart\nChoose type: ").capitalize()
 
-    # if choice == "A" or "B":
-
     response = send_request(f"https://api.openweathermap.org/data/2.5/forecast?q={city}&appid={API_KEY}")
 
     if type(response) is bytes:
