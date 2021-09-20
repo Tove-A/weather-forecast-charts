@@ -4,7 +4,7 @@
 
 <p  align="center">
 
-<h1  align="center">Weather forcast charts</h1>
+<h1  align="center">Weather forecast charts</h1>
 
   
 
@@ -145,7 +145,7 @@ B. Humidity Chart
 Choose type:
 
 ```
-A .png file with the chart will be available in a folder within the forcast directory
+A .png file with the chart will be available in a folder within the forecast directory
 
 #### Humidity charts
 
