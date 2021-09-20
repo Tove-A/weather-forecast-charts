@@ -4,7 +4,7 @@
 
 <p  align="center">
 
-<h1  align="center">Weather forcast charts</h1>
+<h1  align="center">Weather forecast charts</h1>
 
   
 
