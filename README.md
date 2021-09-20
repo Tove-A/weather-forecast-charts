@@ -4,7 +4,7 @@
 
 <p  align="center">
 
-<h1  align="center">Weather forcast charts</h1>
+<h1  align="center">Weather forecast charts</h1>
 
   
 
@@ -15,7 +15,6 @@ This is a program that generates temperature and humidity forecast charts for an
 <details  open="open">
 
 <summary><h2  style="display: inline-block">Table of Contents</h2></summary>
-
 
 
 
@@ -43,14 +42,6 @@ This is a program that generates temperature and humidity forecast charts for an
 
 </details>
 
-  
-
-<!-- ABOUT THE PROJECT -->
-
-## About The Project
-
-  
-  
 
 ### Built With
 
@@ -154,7 +145,7 @@ B. Humidity Chart
 Choose type:
 
 ```
-A .png file with the chart will be available in a folder within the forcast directory
+A .png file with the chart will be available in a folder within the forecast directory
 
 #### Humidity charts
 
