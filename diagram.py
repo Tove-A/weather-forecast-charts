@@ -1,6 +1,8 @@
+# EXTERNAL MODULES
 import matplotlib.pyplot as plt
 import datetime
 
+# Converts the date to fit the diagram
 def convert_dates(dates):
     new_dates = []
     
@@ -10,13 +12,16 @@ def convert_dates(dates):
         new_dates.append(new_date)
     return tuple(new_dates)
 
+# Splitting the time and data
 def zip_weather_data(weather_data):
     time, weather = zip(*weather_data.items())
     date = convert_dates(time)
     return date, weather
 
+# Creates a temperature chart
 def create_temperature_chart(weather_data):
 
+    # Parsing the data to get right information at the right place
     date, weather = zip_weather_data(weather_data)
     temperature = []
     city_name = []
@@ -30,6 +35,7 @@ def create_temperature_chart(weather_data):
     city = city_name[0]
     country_code = city_country_code[0]
 
+    # Creating the layout of the diagram
     plt.figure(figsize=(35, 30), facecolor="floralwhite")
     plt.axes().set_facecolor('white')
     plt.title(f"Temperature forecast for {city}, {country_code}", fontdict={"fontsize" : "60"}, loc="center")
@@ -47,13 +53,16 @@ def create_temperature_chart(weather_data):
             markersize=12)
     plt.xticks(date, rotation="vertical")
 
+    # Saving the diagram to a .png file
     now = datetime.datetime.now()
     plt.savefig(f"temperature_charts/temperature_forecast_{city}_{now}.png")
     print("Temperature forecast file created")
     plt.show()
 
+# Creates a humidity chart
 def create_humidity_chart(weather_data):
 
+    # Parsing the data to get right information at the right place
     date, weather = zip_weather_data(weather_data)
     humidity = []
     city_country_code = []
@@ -67,6 +76,7 @@ def create_humidity_chart(weather_data):
     city = city_name[0]
     country_code = city_country_code[0]
 
+    # Creating the layout of the diagram
     plt.figure(figsize=(35, 30), facecolor="floralwhite")
     plt.axes().set_facecolor('white')
     plt.title(f"Humidity forecast for {city.capitalize()}, {country_code}", fontdict={"fontsize" : "60"}, loc="center")
@@ -84,6 +94,7 @@ def create_humidity_chart(weather_data):
 
     plt.xticks(date, rotation="vertical")
 
+    # Saving the diagram to a .png file
     now = datetime.datetime.now()
     plt.savefig(f"humidity_charts/humidity_forecast_{city}_{now}.png")
     print("Humidity forecast file created")

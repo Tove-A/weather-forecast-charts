@@ -1,12 +1,13 @@
+# EXTERNAL MODULES
 import requests
 import json
 
+# Sends an API-request
 def send_request(request):
 
     try:
         response = requests.get(request)
         if response.status_code == 200:
-            print('Request successful!')
             return response.content
 
         if response.status_code == 404:
@@ -21,6 +22,7 @@ def send_request(request):
         print(f'{e}')
 
 
+# Converts a jsonfile in to a python dictionary
 def convert_json_file(json_file):
     
     if type(json_file) is bytes:
@@ -30,10 +32,12 @@ def convert_json_file(json_file):
         print("Error while converting json file into dictionary")
         return None
 
+# Converts celcius degrees to kelvin degrees
 def convert_to_celcius(kelvin_degrees):
     celsius = kelvin_degrees - 273.15
     return celsius
 
+# Parses the data from https://openweathermap.org/
 def parse_weather_data(response):
 
     weather_info = convert_json_file(response)
