@@ -14,7 +14,7 @@ make_choice = True
 
 while(make_choice):
     city = input("\n-GET FORECAST FOR A CITY-\n\nCity: ")
-    choice = input("A. Temperature Chart\nB. Humidity Chart\nChoose type: ").capitalize()
+    choice = input("A. Temperature Chart\nB. Humidity Chart\nQ. Quit program\nChoose type: ").capitalize()
 
     response = send_request(f"https://api.openweathermap.org/data/2.5/forecast?q={city}&appid={API_KEY}")
 
@@ -26,6 +26,8 @@ while(make_choice):
             create_temperature_chart(weather_data)
         elif choice == "B":
             create_humidity_chart(weather_data)
+        elif choice == "Q":
+            exit("Program exits")
         else:
             print("Write either A or B to choose chart type")
 
